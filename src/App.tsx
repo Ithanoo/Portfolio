@@ -65,6 +65,25 @@ export default function App() {
 
       {/* HERO SF */}
       <header className="hero">
+        {/* Vidéo Background SF */}
+        <div className="hero-video">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            onLoadedData={(e) => {
+              const video = e.currentTarget as HTMLVideoElement
+              video.classList.remove('loading')
+            }}
+          >
+            <source 
+              src="https://assets.mixkit.co/videos/preview/mixkit-spaceship-traveling-through-space-39219-large.mp4" 
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        
         <div className="hero-content">
           <span className="hero-badge">DEVELOPPEUR FULL-STACK</span>
           
@@ -81,7 +100,7 @@ export default function App() {
             <span>🔐 Passionné de Cybersécurité</span>
           </p>
           
-          <p className="hero-intro">
+          <p className="hero-bio">
             Étudiant en Master et développeur passionné, je construis des applications web 
             avec React et TypeScript côté frontend, et Java avec Spring côté backend. 
             Ce qui me motive vraiment : la cybersécurité et la géopolitique numérique.
