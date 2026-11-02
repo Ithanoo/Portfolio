@@ -1,23 +1,41 @@
 import { useEffect, useState } from 'react'
-import { profile, projects } from './data/content'
+import { profile, projects, experiences, formations, skillCategories, watchlist, upcomingProjects } from './data/content'
 import ProjectCard from './components/ProjectCard'
+import ExperienceCard from './components/ExperienceCard'
+import FormationCard from './components/FormationCard'
+import SkillCategory from './components/SkillCategory'
+import WatchItem from './components/WatchItem'
+import GeoWebFeatured from './components/GeoWebFeatured'
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('')
 
+  // Navigation links
+  const navLinks = [
+    { id: '', label: 'ACCUEIL' },
+    { id: 'experiences', label: 'EXPÉRIENCES' },
+    { id: 'formations', label: 'FORMATIONS' },
+    { id: 'competences', label: 'COMPÉTENCES' },
+    { id: 'passions', label: 'PASSIONS' },
+    { id: 'geoweb', label: 'GEOWEB' },
+    { id: 'projets', label: 'PROJETS' },
+    { id: 'veille', label: 'VEILLE' },
+    { id: 'contact', label: 'CONTACT' },
+  ]
+
+  // Detect active section on scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
       
-      // Detect active section
       const sections = document.querySelectorAll('section[id]')
       const navHeight = 70
+      const scrollPosition = window.scrollY + navHeight
       
       sections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top + window.scrollY - navHeight - 100
         const sectionHeight = section.clientHeight
-        const scrollPosition = window.scrollY + navHeight
         
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
           setActiveSection(section.id)
@@ -29,21 +47,15 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Navigation links
-  const navLinks = [
-    { id: '', label: 'ACCUEIL' },
-    { id: 'passions', label: 'PASSIONS' },
-    { id: 'geoweb', label: 'GEOWEB' },
-    { id: 'projets', label: 'PROJETS' },
-    { id: 'contact', label: 'CONTACT' },
-  ]
-
-  // Filter GeoWeb project
+  // Get GeoWeb project
   const geoWebProject = projects.find(p => p.id === 'cybergeopolitics-hub')
+  
+  // Other projects (excluding GeoWeb and upcoming)
+  const otherProjects = projects.filter(p => p.id !== 'cybergeopolitics-hub')
 
   return (
     <div className="app">
-      {/* NAVBAR SF */}
+      {/* ================ NAVBAR ================ */}
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
           <a href="#" className="navbar-brand">
@@ -63,7 +75,7 @@ export default function App() {
         </div>
       </nav>
 
-      {/* HERO SF */}
+      {/* ================ HERO ================ */}
       <header className="hero">
         <div className="hero-content">
           <span className="hero-badge">DEVELOPPEUR FULL-STACK</span>
@@ -97,7 +109,54 @@ export default function App() {
         </div>
       </header>
 
-      {/* SECTION PASSIONS */}
+      {/* ================ SECTIONS ================ */}
+
+      {/* EXPÉRIENCES PROFESSIONNELLES */}
+      <section id="experiences" className="section">
+        <div className="section-header">
+          <h2 className="section-title">
+            EXPÉRIENCES PROFESSIONNELLES
+            <span className="section-subtitle">// PARCOURS</span>
+          </h2>
+        </div>
+        <div className="cards">
+          {experiences.map((exp) => (
+            <ExperienceCard key={exp.id} experience={exp} />
+          ))}
+        </div>
+      </section>
+
+      {/* FORMATIONS */}
+      <section id="formations" className="section">
+        <div className="section-header">
+          <h2 className="section-title">
+            FORMATIONS & CERTIFICATIONS
+            <span className="section-subtitle">// ACADÉMIQUE</span>
+          </h2>
+        </div>
+        <div className="cards">
+          {formations.map((formation) => (
+            <FormationCard key={formation.title} formation={formation} />
+          ))}
+        </div>
+      </section>
+
+      {/* COMPÉTENCES */}
+      <section id="competences" className="section">
+        <div className="section-header">
+          <h2 className="section-title">
+            COMPÉTENCES TECHNIQUES
+            <span className="section-subtitle">// STACK</span>
+          </h2>
+        </div>
+        <div>
+          {skillCategories.map((category) => (
+            <SkillCategory key={category.category} category={category} />
+          ))}
+        </div>
+      </section>
+
+      {/* PASSIONS */}
       <section id="passions" className="section">
         <div className="section-header">
           <h2 className="section-title">
@@ -114,15 +173,9 @@ export default function App() {
             </article>
           ))}
         </div>
-        
-        <ul className="skills">
-          {profile.skills.map((s) => (
-            <li key={s}>{s}</li>
-          ))}
-        </ul>
       </section>
 
-      {/* SECTION GEOWEB - Projet fil rouge */}
+      {/* GEOWEB - Projet fil rouge */}
       <section id="geoweb" className="section">
         <div className="section-header">
           <h2 className="section-title">
@@ -137,29 +190,49 @@ export default function App() {
         </p>
         
         {geoWebProject && (
-          <div className="cards">
-            <ProjectCard key={geoWebProject.id} project={geoWebProject} isFeatured={true} />
+          <div style={{ marginTop: '24px' }}>
+            <GeoWebFeatured project={geoWebProject} />
           </div>
         )}
       </section>
 
-      {/* SECTION PROJETS */}
+      {/* AUTRES PROJETS */}
       <section id="projets" className="section">
         <div className="section-header">
           <h2 className="section-title">
-            MES PROJETS
-            <span className="section-subtitle">// DEV SF</span>
+            MES AUTRES PROJETS
+            <span className="section-subtitle">// DÉVELOPPEMENT</span>
           </h2>
         </div>
         
         <div className="cards">
-          {projects.filter(p => p.id !== 'cybergeopolitics-hub').map((p) => (
+          {otherProjects.map((p) => (
             <ProjectCard key={p.id} project={p} />
+          ))}
+          
+          {/* Placeholder pour futurs projets */}
+          {upcomingProjects.map((p) => (
+            <ProjectCard key={p.id} project={p} isFeatured={false} />
           ))}
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* VEILLE TECHNOLOGIQUE */}
+      <section id="veille" className="section">
+        <div className="section-header">
+          <h2 className="section-title">
+            VEILLE TECHNOLOGIQUE
+            <span className="section-subtitle">// TRENDS</span>
+          </h2>
+        </div>
+        <div className="cards">
+          {watchlist.map((item) => (
+            <WatchItem key={item.title} item={item} />
+          ))}
+        </div>
+      </section>
+
+      {/* ================ FOOTER ================ */}
       <footer id="contact" className="footer">
         <p>
           <span style={{ color: 'var(--neon-blue)' }}>≡</span> 
