@@ -13,15 +13,15 @@ export default function App() {
 
   // Navigation links
   const navLinks = [
-    { id: '', label: 'ACCUEIL' },
+    { id: '', label: 'ACCUEIL & CONTACT' },
     { id: 'experiences', label: 'EXPÉRIENCES' },
     { id: 'formations', label: 'FORMATIONS' },
     { id: 'competences', label: 'COMPÉTENCES' },
     { id: 'passions', label: 'PASSIONS' },
     { id: 'geoweb', label: 'GEOWEB' },
     { id: 'projets', label: 'PROJETS' },
-    { id: 'veille', label: 'VEILLE' },
-    { id: 'contact', label: 'CONTACT' },
+    // { id: 'veille', label: 'VEILLE' },
+    // { id: 'contact', label: 'CONTACT' },
   ]
 
   // Detect active section on scroll
@@ -78,10 +78,10 @@ export default function App() {
       {/* ================ HERO ================ */}
       <header className="hero">
         <div className="hero-content">
-          <span className="hero-badge">DEVELOPPEUR FULL-STACK</span>
+          <span className="hero-badge">INGENIEUR CYBERSECURITE & DEVELOPPEUR FULL-STACK</span>
           
-          <p className="hero-hello">┌─ BONJOUR</p>
-          <h1>RAPHAËL <span style={{ color: 'var(--neon-pink)' }}>│</span> DEV SF</h1>
+          <p className="hero-hello">┌─ BONJOUR / BONSOIR !</p>
+          <h1>RAPHAËL <span style={{ color: 'var(--neon-pink)' }}>│</span></h1>
           
           <p className="hero-role">
             Développeur TypeScript (React) & Java (Spring)
@@ -90,13 +90,13 @@ export default function App() {
           <p className="hero-status">
             <span>📍 Paris, France</span>
             <span>🎓 Master en alternance</span>
-            <span>🔐 Passionné de Cybersécurité</span>
+            <span>🔐 Passionné de Cybersécurité et bien d'autres</span>
           </p>
           
           <p className="hero-intro">
-            Étudiant en Master et développeur passionné, je construis des applications web 
-            avec React et TypeScript côté frontend, et Java avec Spring côté backend. 
-            Ce qui me motive vraiment : la cybersécurité et la géopolitique numérique.
+            Étudiant en MBA RSIC au sein de l'Ecole de Guerre Economique à Paris et développeur passionné, j'ai beaucoup d'idées que je parviens à concrétiser grâce au développement web.Je construis des applications web 
+            avec React et TypeScript côté frontend, et Java avec Spring côté backend (si besoin). 
+            Ce qui me motive vraiment : la cybersécurité, la géopolitique, numérique ou non et les jeux.
           </p>
           
           <div className="hero-links">
@@ -184,9 +184,7 @@ export default function App() {
           </h2>
         </div>
         <p className="section-description">
-          CyberGeopolitics Hub est mon projet principal qui combine cybersécurité et géopolitique. 
-          Une plateforme complète avec carte interactive, analyse de données et visualisation 
-          des cyberattaques mondiales.
+          CyberGeopolitics Hub est mon projet principal qui combine cybersécurité et géopolitique. Une plateforme complète avec carte interactive, analyse de données et visualisation des cyberattaques mondiales.
         </p>
         
         {geoWebProject && (
@@ -218,7 +216,8 @@ export default function App() {
       </section>
 
       {/* VEILLE TECHNOLOGIQUE */}
-      <section id="veille" className="section">
+      {/* TODO */}
+      {/* <section id="veille" className="section">
         <div className="section-header">
           <h2 className="section-title">
             VEILLE TECHNOLOGIQUE
@@ -230,7 +229,7 @@ export default function App() {
             <WatchItem key={item.title} item={item} />
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ================ FOOTER ================ */}
       <footer id="contact" className="footer">

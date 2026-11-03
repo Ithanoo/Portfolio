@@ -61,15 +61,16 @@ export const profile = {
       text: "Comprendre les cyberattaques, leur contexte géopolitique et les moyens de s'en protéger.",
     },
     {
-      emoji: '⚛️',
-      title: 'Développement web',
-      text: 'React + TypeScript au quotidien, Spring pour les API robustes.',
-    },
-    {
       emoji: '🌍',
       title: 'Géopolitique & tech',
       text: "Explorer le croisement entre technologie, données et enjeux mondiaux.",
     },
+    {
+      emoji: '🎮',
+      title: 'Jeux',
+      text: 'Qu ils soient vidéos ou pas, j aime la stratégie notamment dans les MMO.',
+    },
+    
   ],
   skills: [
     'TypeScript',
@@ -84,7 +85,7 @@ export const profile = {
   ],
   socials: [
     { label: 'GitHub', url: 'https://github.com/Ithanoo' },
-    { label: 'LinkedIn', url: 'https://linkedin.com/in/raphael-dev' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/raphael-lou-mar/' },
   ],
 }
 
@@ -104,28 +105,28 @@ export const projects: Project[] = [
     emoji: '🌍',
   },
   {
-    id: 'todoapp',
-    title: 'ToDo App',
+    id: 'findmyinforientation',
+    title: 'FindMyInfOrientation',
     tagline: 'Gestion de tâches en React',
     description:
       "Application de gestion de tâches développée en React : ajout, édition, suppression et suivi des tâches au quotidien. Un projet personnel pour maîtriser les fondamentaux de React (composants, state, props).",
-    tech: ['React', 'JavaScript'],
+    tech: ['React', 'TypeScript', 'D3.js', 'Vite'],
     category: 'perso',
     links: [
-      { label: 'Voir sur GitHub', url: 'https://github.com/Ithanoo/ToDoApp' },
+      { label: 'Voir sur GitHub', url: 'https://github.com/Ithanoo/FindMyInfoOrientation' },
     ],
     emoji: '✅',
   },
   {
-    id: 'sitesurfruncraft',
-    title: 'Site Surfruncraft',
-    tagline: 'Premier projet web personnel',
+    id: 'iaalignementpeda',
+    title: 'Application avec RAG pour Formateurs et formés',
+    tagline: 'Livrable de stage d\'initiation à la recherche',
     description:
-      "Un de mes premiers projets web : un site dédié à la communauté Minecraft Surfruncraft. C'est le projet qui m'a fait découvrir le développement web et donné envie d'en faire mon métier.",
-    tech: ['HTML', 'CSS'],
-    category: 'perso',
+      "Une application web moderne qui utilise un système RAG (Retrieval-Augmented Generation) pour offrir une expérience d'apprentissage personnalisée selon trois rôles d'utilisateurs : Apprenant, Concepteur pédagogique, et Chercheur/Développeur.",
+    tech: ['React 18', 'TypeScript', 'Tailwind CSS', 'Python'],
+    category: 'pro',
     links: [
-      { label: 'Voir sur GitHub', url: 'https://github.com/Ithanoo/SiteSurfruncraft' },
+      { label: 'Voir sur GitHub', url: 'https://github.com/Layauu/ia-alignement-pedagogique' },
     ],
     emoji: '🧱',
   },
@@ -138,46 +139,91 @@ export const projects: Project[] = [
 // EXPÉRIENCES PROFESSIONNELLES
 export const experiences: Experience[] = [
   {
-    id: 'alternance-2024',
-    company: "Entreprise en Alternance",
-    role: "Développeur Full-Stack",
-    period: "Sept 2024 – Présent",
-    description: "Développement d'applications web full-stack dans un environnement agile. Participation à la conception et à l'implémentation de nouvelles fonctionnalités, ainsi qu'à la maintenance des applications existantes. Travail en équipe avec des développeurs seniors sur des projets variés.",
-    tech: ['Java', 'Spring Boot', 'React', 'TypeScript', 'MongoDB', 'Git'],
+    id: 'architecte-2026',
+    company: "SPB",
+    role: "Alternant Architecte Technique SI",
+    period: "Décembre 2025 – Septembre 2026",
+    description: "Refonte de l'architecture technique des extranets dans l’objectif d'optimisation et de réduction du temps de déploiement des extranets. Création d'un P.O.C sur l'intégration d'un module IA de Figma dans le processus de création d'extranets pour les clients. Coordination et vulgarisation entre les différents acteurs du projet. Etudes sur la place des I.A. dans les nouvelles techniques de développement.",
+    tech: ['Figma', 'Visual Studio Code', 'React', 'TypeScript', 'Git', 'BPMN'],
+    emoji: '🏗️'
+  },
+  {
+    id: 'alternance-2026',
+    company: "SPB",
+    role: "Alternant Développeur Full-Stack",
+    period: "Octobre 2023 – Octobre 2025",
+    description: "Migration d’une Base de données MySQL vers Microsoft SQL Server. Etudes sur l’impact d’une migration Cloud sur le PRA de l’entreprise. Création d’une API CRUD de gestion de tâches et de travaux en Java",
+    tech: ['React', 'TypeScript', 'MUI', 'Java', 'Spring', 'Git', 'Confluence/Jira', 'Projets de groupe'],
     emoji: '💼'
   },
   {
-    id: 'stage-2023',
-    company: "Société Tech",
-    role: "Développeur Backend",
-    period: "Avril 2023 – Août 2023",
-    description: "Stage de 4 mois où j'ai travaillé sur le développement d'APIs REST avec Spring Boot. Intégration de services externes et optimisation des requêtes bases de données. Apprentissage des bonnes pratiques de développement backend et de la sécurité des API.",
-    tech: ['Java', 'Spring', 'MySQL', 'Postman'],
-    emoji: '📈'
-  }
+    id: 'stage-tunis',
+    company: "TEK-UP Tunis",
+    role: "Stage Ingénieur CI/CD",
+    period: "Juillet 2025 – Août 2025",
+    description: "Mise en place d’une CI/CD complète autour d’un projet sur GitLab. Création de l’écosystème sur le Cloud AWS avec métriques et suivis. Mise en place d’un cahier des charges détaillé sur Jira avec une méthodologie Agile et documentation sur Confluence",
+    tech: ['CI/CD', 'GitLab', 'Pratiques DevOps', 'AWS', 'YAML'],
+    emoji: '🛬'
+  },
+  {
+    id: 'stage-cesi',
+    company: "CESI Rouen",
+    role: "Stage d'Initiation à la Recherche",
+    period: "juin 2025 – juillet 2025",
+    description: "Création et intégration d’un RAG intéractif pour étudiants et professeurs. Conception et étude d’un outil de SimilaritySearch de projets GitLab. Constitution d’une API CRUD en Python avec des LLM et React. Travail en collaboration avec un autre étudiant, versionning complet disponible sur GitHub.",
+    tech: ['RAG', 'IA', 'Python', 'React', 'Git', 'GitHub', 'GitLab', 'SimilaritySearch', 'API CRUD', ],
+    emoji: '🔍'
+  },
+  {
+    id: 'stage-spb',
+    company: "SPB",
+    role: "Stage Développeur",
+    period: "Mai 2023 – Août 2023",
+    description: "Développement d’une solution interne en Java/Spring et TypeScript/React. Management et suivi du projet sur la suite Atlassian (Jira et Confluence)",
+    tech: ['React', 'TypeScript', 'MUI', 'Java', 'Spring', 'Git', 'Confluence/Jira'],
+    emoji: '💡'
+  },
+
+  
+  
+  
 ]
 
 // FORMATIONS
 export const formations: Formation[] = [
   {
-    title: "Master Informatique - Parcours Cybersécurité",
-    school: "Université Paris Cité",
-    period: "2024 – 2026",
-    description: "Master avec spécialisation en cybersécurité et développement web. Cours avancés sur la sécurité des applications, la cryptographie, et l'analyse des vulnérabilités. Projet de fin d'étude : Analyse des cyberattaques via le machine learning.",
-    emoji: '🎓'
+    title: "MBA Risques, Sûreté Internationale et Cybersécurité (RSIC)",
+    school: "Ecole de Guerre Economique",
+    period: "2026 – 2027",
+    description: "Il forme à la gestion des risques, à la sûreté, à la sécurité et à la cybersécurité, à travers des enseignements en géopolitique, due diligence, cartographie des menaces et gestion de crise. Les étudiants choisissent également entre une option Sûreté et une option Cyber.",
+    emoji: '⚔',
   },
   {
-    title: "Licence Informatique",
-    school: "Université Paris Cité",
-    period: "2021 – 2024",
-    description: "Formation solide en algorithmique, structures de données, programmation orientée objet, et développement web. Projets pratiques en Java, Python, et JavaScript.",
+    title: "Ingénieur Informatique",
+    school: "CESI Rouen",
+    period: "2023 – 2026",
+    description: "Formation complète sur les différents métiers de l'informatique. Beaucoup de thèmes étudiés, notamment le développement web et logiciel, les réseaux, la Big Data ou encore le management. L'option cybersécurité a été un vrai plus dans la compréhension des enjeux cybers et de l'application technique.",
     emoji: '📚'
   },
   {
-    title: "Certification SecNumAcadémie",
-    school: "ANSSI",
-    period: "2024",
+    title: "Bachelor Numérique Option Développement Web",
+    school: "StJoSup",
+    period: "2023",
     description: "Formation complète en cybersécurité couvrant les bases et les concepts avancés : sécurisation des systèmes, détection d'intrusions, gestion des risques, et conformité RGPD.",
+    emoji: '🔒'
+  },
+  {
+    title: "BTS Services Informatique aux Organisations Option SLAM",
+    school: "StJoSup",
+    period: "2022 - 2023",
+    description: "Formation complète en cybersécurité couvrant les bases et les concepts avancés : sécurisation des systèmes, détection d'intrusions, gestion des risques, et conformité RGPD.",
+    emoji: '🔒'
+  },
+  {
+    title: "Certification EBIOS Risk Manager",
+    school: "Ecole de Guerre Economique",
+    period: "2027",
+    description: "SOON",
     emoji: '🔒'
   }
 ]
@@ -187,47 +233,47 @@ export const skillCategories: SkillCategory[] = [
   {
     category: "Frontend",
     items: [
-      { name: "React", level: 4, icon: "⚛️" },
-      { name: "TypeScript", level: 4, icon: "🔵" },
-      { name: "HTML/CSS", level: 4, icon: "🎨" },
+      { name: "React", level: 8, icon: "⚛️" },
+      { name: "TypeScript", level: 6, icon: "🔵" },
+      { name: "HTML/CSS", level: 5, icon: "🎨" },
       { name: "Leaflet", level: 3, icon: "🗺️" },
-      { name: "Tailwind CSS", level: 2, icon: "🎭" }
+      { name: "Tailwind CSS", level: 3, icon: "🎭" }
     ]
   },
   {
     category: "Backend",
     items: [
-      { name: "Java", level: 4, icon: "☕" },
-      { name: "Spring Boot", level: 4, icon: "🌿" },
-      { name: "Node.js", level: 3, icon: "🟢" },
-      { name: "Express", level: 3, icon: "🚀" },
-      { name: "REST APIs", level: 4, icon: "🔄" }
+      { name: "Java", level: 6, icon: "☕" },
+      { name: "Spring Boot", level: 7, icon: "🌿" },
+      { name: "Node.js", level: 5, icon: "🟢" },
+      { name: "Express", level: 6, icon: "🚀" },
+      { name: "REST APIs", level: 6, icon: "🔄" }
     ]
   },
   {
     category: "Base de données",
     items: [
-      { name: "MongoDB", level: 3, icon: "🍃" },
-      { name: "MySQL", level: 3, icon: "🗄️" },
-      { name: "PostgreSQL", level: 2, icon: "🐘" }
+      { name: "MongoDB", level: 5, icon: "🍃" },
+      { name: "MySQL", level: 7, icon: "🗄️" },
+      { name: "PostgreSQL", level: 5, icon: "🐘" }
     ]
   },
   {
     category: "DevOps & Outils",
     items: [
-      { name: "Git", level: 4, icon: "🪜" },
-      { name: "GitHub", level: 4, icon: "🐙" },
-      { name: "Docker", level: 2, icon: "🐳" },
-      { name: "Vite", level: 3, icon: "⚡" }
+      { name: "Git", level: 6, icon: "🪜" },
+      { name: "GitHub", level: 7, icon: "🐙" },
+      { name: "Docker", level: 5, icon: "🐳" },
+      { name: "Vite", level: 4, icon: "⚡" }
     ]
   },
   {
     category: "Cybersécurité",
     items: [
-      { name: "Analyse de vulnérabilités", level: 3, icon: "🛡️" },
-      { name: "Sécurité des APIs", level: 3, icon: "🔐" },
-      { name: "Cryptographie", level: 2, icon: "🔑" },
-      { name: "RGPD", level: 3, icon: "📜" }
+      { name: "Analyse de vulnérabilités", level: 4, icon: "🛡️" },
+      { name: "Sécurité des APIs", level: 7, icon: "🔐" },
+      { name: "Cryptographie", level: 6, icon: "🔑" },
+      { name: "RGPD", level: 7, icon: "📜" }
     ]
   }
 ]

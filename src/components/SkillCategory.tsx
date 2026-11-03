@@ -45,7 +45,7 @@ export default function SkillCategory({ category }: { category: SkillCategoryTyp
               <div 
                 style={{
                   height: '100%',
-                  width: `${(item.level / 4) * 100}%`,
+                  width: `${(item.level / 10) * 100}%`,
                   background: 'linear-gradient(90deg, var(--neon-blue), var(--neon-purple))',
                   borderRadius: '3px',
                   transition: 'width 0.3s ease'

@@ -510,7 +510,6 @@ body::after {
 
 .section-description {
   color: var(--text-secondary);
-  max-width: 500px;
   margin-top: 16px;
   line-height: 1.8;
 }
