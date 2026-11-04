@@ -4,7 +4,6 @@ import ProjectCard from './components/ProjectCard'
 import ExperienceCard from './components/ExperienceCard'
 import FormationCard from './components/FormationCard'
 import SkillCategory from './components/SkillCategory'
-// import WatchItem from './components/WatchItem'
 import GeoWebFeatured from './components/GeoWebFeatured'
 
 export default function App() {
@@ -214,22 +213,6 @@ export default function App() {
           ))}
         </div>
       </section>
-
-      {/* VEILLE TECHNOLOGIQUE */}
-      {/* TODO */}
-      {/* <section id="veille" className="section">
-        <div className="section-header">
-          <h2 className="section-title">
-            VEILLE TECHNOLOGIQUE
-            <span className="section-subtitle">// TRENDS</span>
-          </h2>
-        </div>
-        <div className="cards">
-          {watchlist.map((item) => (
-            <WatchItem key={item.title} item={item} />
-          ))}
-        </div>
-      </section> */}
 
       {/* ================ FOOTER ================ */}
       <footer id="contact" className="footer">
