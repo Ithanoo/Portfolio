@@ -4,7 +4,7 @@ import ProjectCard from './components/ProjectCard'
 import ExperienceCard from './components/ExperienceCard'
 import FormationCard from './components/FormationCard'
 import SkillCategory from './components/SkillCategory'
-import WatchItem from './components/WatchItem'
+// import WatchItem from './components/WatchItem'
 import GeoWebFeatured from './components/GeoWebFeatured'
 
 export default function App() {
