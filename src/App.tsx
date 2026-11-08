@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { profile, projects, experiences, formations, skillCategories, watchlist, upcomingProjects } from './data/content'
+import { profile, projects, experiences, formations, skillCategories, upcomingProjects } from './data/content'
 import ProjectCard from './components/ProjectCard'
 import ExperienceCard from './components/ExperienceCard'
 import FormationCard from './components/FormationCard'
